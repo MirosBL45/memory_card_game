@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JavaScript Memory game">
+    <meta name="keywords" content="HTML, CSS, SASS, JavaScript, programming, Memory game">
+    <meta name="author" content="Miroslav Jovic">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="JavaScript Memory game">
+    <meta property="og:description" content="JavaScript Memory game">
+    <meta property="twitter:title" content="JavaScript Memory game">
+    <meta property="twitter:description" content="JavaScript Memory game">
+    <meta property="og:site_name" content="JavaScript Memory game">
+    <title>
+        Memory game
+    </title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/logoJM.png" type="image/x-icon">
+</head>
+<body>
+
+    <h1 class="main_heading">Memory game</h1>
+
+    <section class="memory_game">
+        <div class="memory_card" data-framework="aurelia">
+            <img src="img/aurelia.svg" alt="aurelia" class="front_face">
+            <img src="img/js-badge.svg" alt="js-badge" class="back_face">
+        </div>
+        <div class="memory_card" data-framework="aurelia">
+            <img src="img/aurelia.svg" alt="aurelia" class="front_face">
+            <img src="img/js-badge.svg" alt="js-badge" class="back_face">
+        </div>
+        <div class="memory_card" data-framework="vue">
+            <img src="img/vue.svg" alt="vue" class="front_face">
+            <img src="img/js-badge.svg" alt="js-badge" class="back_face">
+        </div>
+        <div class="memory_card" data-framework="vue">
+            <img src="img/vue.svg" alt="vue" class="front_face">
+            <img src="img/js-badge.svg" alt="js-badge" class="back_face">
+        </div>
+        <div class="memory_card" data-framework="angular">
+            <img src="img/angular.svg" alt="angular" class="front_face">
+            <img src="img/js-badge.svg" alt="js-badge" class="back_face">
+        </div>
+        <div class="memory_card" data-framework="angular">
+            <img src="img/angular.svg" alt="angular" class="front_face">
+            <img src="img/js-badge.svg" alt="js-badge" class="back_face">
+        </div>
+        <div class="memory_card" data-framework="ember">
+            <img src="img/ember.svg" alt="ember" class="front_face">
+            <img src="img/js-badge.svg" alt="js-badge" class="back_face">
+        </div>
+        <div class="memory_card" data-framework="ember">
+            <img src="img/ember.svg" alt="ember" class="front_face">
+            <img src="img/js-badge.svg" alt="js-badge" class="back_face">
+        </div>
+        <div class="memory_card" data-framework="backbone">
+            <img src="img/backbone.svg" alt="backbone" class="front_face">
+            <img src="img/js-badge.svg" alt="js-badge" class="back_face">
+        </div>
+        <div class="memory_card" data-framework="backbone">
+            <img src="img/backbone.svg" alt="backbone" class="front_face">
+            <img src="img/js-badge.svg" alt="js-badge" class="back_face">
+        </div>
+        <div class="memory_card" data-framework="react">
+            <img src="img/react.svg" alt="react" class="front_face">
+            <img src="img/js-badge.svg" alt="js-badge" class="back_face">
+        </div>
+        <div class="memory_card" data-framework="react">
+            <img src="img/react.svg" alt="react" class="front_face">
+            <img src="img/js-badge.svg" alt="js-badge" class="back_face">
+        </div>
+    </section>
+
+    <p class="numberOfAttempts">Number of attempts: <span id="numOfAtt">0</span></p>
+
+    <div class="div_buttons">
+        <button id="reload" onclick="window.location.reload()">Play again!</button>
+        <button id="rules">Display rules</button>
+    </div>
+
+    
+
+    <div class="rules_modal">
+        <button id="closeModal">X</button>        
+            <h3>Rules for the Memory game</h3>
+            <p>The game starts with all the cards face down and player can turn over two cards.</p>
+            <p>If the two cards have the same picture, then the cards remain face up, otherwise the cards turn face down again.</p>
+            <p>You win when you reveal all the cards.</p>
+            <p>Good luck!!!</p>            
+    </div>
+
+
+    <footer>
+        <p class="footer_description">
+            Coded by <a href="https://github.com/MirosBL45" target="_blank">Miroslav Jovic</a>            
+        </p>
+    </footer>
+    
+
+    <script src="app/memory.js"></script>
+</body>
+</html>

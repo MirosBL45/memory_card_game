@@ -1,0 +1,181 @@
+@import 'media';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    @include responseMed(big-desktop) {
+        font-size: 120%;
+    }
+
+    @include responseMed(bigPhone) {
+        font-size: 85%;
+    }
+
+    @include responseMed(phone) {
+        font-size: 75%; //9px=1rem; 9/16px=56.25%
+    }
+}
+
+body {
+    background: #0e1791;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: hsl(33, 85%, 82%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main_heading {
+    margin: 2rem 0;
+    font-size: 4rem;
+}
+
+.memory_game {
+    margin-bottom: 2rem;
+    height: 40rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    @include responseMed(tab-port) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media only screen and (max-height: 575.98px) and (orientation: landscape) {
+        grid-template-columns: repeat(6, 1fr);
+        height: 14rem;
+    }
+
+    perspective: 62.5rem;
+
+    .memory_card {
+        width: 9rem;
+        margin: 0.313rem;
+        position: relative;
+        transform: scale(1);
+        transform-style: preserve-3d;
+        transition: 0.5s;
+        cursor: grab;
+
+        @media only screen and (max-height: 575.98px) and (orientation: landscape) {
+            width: 6rem;
+            height: 7rem;
+        }
+
+        &:active {
+            transform: scale(0.97);
+            transition: all 0.23s;
+        }
+
+        &.flip {
+            transform: rotateY(180deg);
+        }
+    }
+
+    .front_face,
+    .back_face {
+        width: 100%;
+        height: 100%;
+        padding: 1.25rem;
+        position: absolute;
+        border-radius: 0.4rem;
+        background: #1c7ccc;
+        backface-visibility: hidden;
+    }
+
+    .front_face {
+        transform: rotateY(180deg);
+    }
+}
+
+.div_buttons {
+    margin-bottom: 2rem;
+}
+
+.numberOfAttempts {
+    margin-bottom: 3rem;
+    font-size: 1.8rem;
+}
+
+.rules_modal {
+    text-shadow: none;
+    display: none;
+    background-color: hsl(0, 0%, 30%);
+    color: hsl(0, 0%, 85%);
+    box-shadow: rgba(255, 255, 255, 0.8) 0 0 1000px 1000px;
+    max-width: 40.62rem;
+    margin: auto;
+    padding: 2.12rem;
+    border-radius: 0.7rem;
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    width: 100%;
+
+    @media only screen and (max-height: 575.98px) and (orientation: landscape) {
+        padding: 1.52rem;
+        width: 70%;
+        top: 60%;
+    }
+
+    h3 {
+        margin: 2.5rem 0;
+        font-size: 2.7rem;
+
+        @media only screen and (max-height: 575.98px) and (orientation: landscape) {
+            margin: 2rem 0;
+            font-size: 1.7rem;
+        }
+    }
+
+    p {
+        margin: 1.5rem 0;
+        font-size: 1.5rem;
+
+        @media only screen and (max-height: 575.98px) and (orientation: landscape) {
+            margin: 1rem 0;
+            font-size: 1rem;
+        }
+
+    }
+
+    #closeModal {
+        height: 1.25rem;
+        width: 1.25rem;
+        color: hsl(0, 0%, 85%);
+        background-color: transparent;
+        border: 0;
+        font-size: 1.56rem;
+        font-weight: bold;
+        position: absolute;
+        right: 1.2rem;
+        top: 1.2rem;
+        cursor: pointer;
+    }
+}
+
+footer {
+    margin-top: auto;
+
+    .footer_description {
+        padding: 1rem 0.5rem;
+        font-weight: bold;
+        text-align: center;
+
+        a {
+            transition: 0.27s;
+            text-decoration: none;
+            color: hsl(195, 53%, 71%);
+        }
+
+        a:hover {
+            color: hsl(289, 72%, 27%)
+        }
+    }
+}
+
+@import 'buttons';
